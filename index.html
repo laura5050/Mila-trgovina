@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Jost:wght@400&display=swap" rel="stylesheet">
 <style>
-:root{--ground:#FBF6F1;--band:#F4ECE4;--thread:#E2A3A6;--hoop:#CDBBA7;--blush:#F3DDDD;--sage:#E3ECE2;--sand:#EBE1D4;--ink:#7A4A50;--sub:#6F6157}
+:root{--logo-znak:120px;--logo-ime:88px;--logo-podnapis:24px;--ground:#FBF6F1;--band:#F4ECE4;--thread:#E2A3A6;--hoop:#CDBBA7;--blush:#F3DDDD;--sage:#E3ECE2;--sand:#EBE1D4;--ink:#7A4A50;--sub:#6F6157}
 *{box-sizing:border-box}
 body{margin:0;background:var(--ground);color:var(--ink);font-family:'Jost',Helvetica,Arial,sans-serif;font-size:17px;line-height:1.6}
 a{color:var(--ink)}a:hover{color:#4F2D32}
@@ -19,10 +19,12 @@ h2{margin:0;font-size:42px}
 p{margin:0;color:var(--sub)}
 .wrap{max-width:1160px;margin:0 auto;padding:0 24px}
 header .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding-top:28px;padding-bottom:28px}
-.logo{display:flex;align-items:center;gap:18px;text-decoration:none}
+.logo{display:flex;align-items:center;gap:22px;text-decoration:none}
+.logo svg{width:var(--logo-znak);height:var(--logo-znak);flex:none}
 .logo-text{display:flex;flex-direction:column;line-height:1}
-.logo-name{font-family:'Cormorant Garamond',Georgia,serif;font-size:64px}
-.logo-sub{font-size:19px;letter-spacing:.2em;color:var(--sub);margin-top:8px}
+.logo-name{font-family:'Cormorant Garamond',Georgia,serif;font-size:var(--logo-ime)}
+.logo-sub{font-size:var(--logo-podnapis);letter-spacing:.2em;color:var(--sub);margin-top:10px}
+@media (max-width:700px){:root{--logo-znak:72px;--logo-ime:52px;--logo-podnapis:15px}}
 nav{display:flex;flex-wrap:wrap;gap:14px;font-size:22px}
 nav a{display:inline-block;padding:10px 26px;border:1.5px solid var(--ink);border-radius:999px;text-decoration:none}
 nav a:hover{background:var(--ink);color:var(--ground)}
@@ -55,13 +57,12 @@ footer .head{color:var(--ink)}
 </style>
 </head>
 <body>
-
-
+ 
 <header>
 <div class="wrap">
 <a class="logo" href="#domov">
-<svg viewBox="0 0 50 50" width="38" height="38" aria-hidden="true"><circle cx="20" cy="21" r="16" fill="none" stroke="#CDBBA7" stroke-width="2.5"/><rect x="16" y="1" width="8" height="5" rx="1.5" fill="#CDBBA7"/><path d="M12 24 C12 14 20 14 20 22 C20 14 28 14 28 24" fill="none" stroke="#E2A3A6" stroke-width="2.5" stroke-linecap="round"/></svg>
-Mila
+<svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="21" r="16" fill="none" stroke="#CDBBA7" stroke-width="2.5"/><rect x="16" y="1" width="8" height="5" rx="1.5" fill="#CDBBA7"/><path d="M12 24 C12 14 20 14 20 22 C20 14 28 14 28 24" fill="none" stroke="#E2A3A6" stroke-width="2.5" stroke-linecap="round"/></svg>
+<span class="logo-text"><span class="logo-name">Mila</span><span class="logo-sub">srčna trgovina</span></span>
 </a>
 <nav aria-label="Glavni meni">
 <a href="#trgovina">Trgovina</a>

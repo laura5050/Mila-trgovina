@@ -14,9 +14,10 @@
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--ground);color:var(--ink);font-family:'Jost',Helvetica,Arial,sans-serif;font-size:17px;line-height:1.6}
 a{color:var(--ink)}a:hover{color:#4F2D32}
-h1,h2,.serif{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500}
+h1,h2,h3,.serif{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500}
 h1{margin:0;font-size:clamp(40px,6vw,64px);line-height:1.05}
 h2{margin:0;font-size:42px}
+h3{margin:0;font-size:32px;line-height:1.15}
 p{margin:0;color:var(--sub)}
 .wrap{max-width:1160px;margin:0 auto;padding:0 24px}
 header .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding-top:28px;padding-bottom:28px}
@@ -34,11 +35,10 @@ nav a:hover{background:var(--ink);color:var(--ground)}
 .eyebrow{font-size:14px;letter-spacing:.3em;color:var(--sub)}
 .hero p{max-width:460px}
 .btns{display:flex;flex-wrap:wrap;gap:16px}
-.btn{display:inline-block;padding:14px 28px;border:1.5px solid var(--ink);border-radius:999px;text-decoration:none}
+.btn{display:inline-block;padding:14px 28px;border:1.5px solid var(--ink);border-radius:999px;text-decoration:none;font-family:inherit;font-size:inherit;cursor:pointer;background:transparent;color:var(--ink)}
 .btn.fill{background:var(--ink);color:var(--ground)}
 .btn.fill:hover{color:var(--ground);background:#4F2D32}
 .ph{display:flex;align-items:center;justify-content:center;text-align:center;padding:12px;color:var(--sub);font-size:14px;background:var(--blush)}
-.hero .ph{min-height:380px;border-radius:200px 200px 24px 24px;font-size:15px}
 section.band{background:var(--band);padding:72px 0}
 .shop{display:flex;flex-direction:column;gap:36px}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px}
@@ -46,10 +46,28 @@ section.band{background:var(--band);padding:72px 0}
 .card .ph,.card img{aspect-ratio:1/1;width:100%;height:auto;border-radius:20px;object-fit:cover;display:block}
 .card .name{font-family:'Cormorant Garamond',Georgia,serif;font-size:26px}
 .card .price{color:var(--sub);font-size:15px}
-.custom{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:48px;align-items:center;padding-top:80px;padding-bottom:80px}
-.custom .ph{min-height:300px;border-radius:24px;background:var(--sage);font-size:15px}
-.custom .txt{display:flex;flex-direction:column;gap:20px}
-ol{margin:0;padding-left:20px;color:var(--sub)}
+
+/* Izdelano po tvoji željI: dva razdelka */
+.custom{padding-top:80px;padding-bottom:80px;display:flex;flex-direction:column;gap:12px}
+.custom .lead{max-width:640px}
+.duo{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:32px;margin-top:24px;align-items:start}
+.panel{background:var(--band);border-radius:24px;padding:28px;display:flex;flex-direction:column;gap:18px}
+.panel img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:20px;display:block}
+.panel ol{margin:0;padding-left:20px;color:var(--sub)}
+.panel .btn{align-self:flex-start}
+form{display:flex;flex-direction:column;gap:20px}
+fieldset{border:0;margin:0;padding:0;min-width:0}
+legend,.lab{padding:0;font-size:16px;color:var(--ink);margin-bottom:8px;display:block}
+.swatches{display:flex;flex-wrap:wrap;gap:10px}
+.sw{position:relative;display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border:1.5px solid var(--hoop);border-radius:999px;cursor:pointer;font-size:15px;background:var(--ground)}
+.sw input{position:absolute;opacity:0;pointer-events:none}
+.sw:has(input:checked){border-color:var(--ink);background:var(--blush)}
+.sw:has(input:focus-visible){outline:2px solid var(--ink);outline-offset:2px}
+.dot{width:16px;height:16px;border-radius:50%;border:1px solid rgba(0,0,0,.25);flex:none}
+.field{width:100%;padding:12px 16px;border:1.5px solid var(--hoop);border-radius:14px;background:var(--ground);color:var(--ink);font-family:inherit;font-size:16px}
+.field:focus{outline:2px solid var(--ink);outline-offset:1px}
+.hint{font-size:14px;color:var(--sub);margin-top:6px}
+
 .about{max-width:760px;margin:0 auto;padding:0 24px;display:flex;flex-direction:column;gap:20px;text-align:center}
 footer .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:32px;padding-top:56px;padding-bottom:24px;font-size:15px;color:var(--sub)}
 footer .col{display:flex;flex-direction:column;gap:8px}
@@ -58,7 +76,7 @@ footer .head{color:var(--ink)}
 </style>
 </head>
 <body>
- 
+
 <header>
 <div class="wrap">
 <a class="logo" href="#domov">
@@ -73,7 +91,6 @@ footer .head{color:var(--ink)}
 </nav>
 </div>
 </header>
-
 
 <main>
 <section id="domov" class="wrap hero">
@@ -93,8 +110,7 @@ footer .head{color:var(--ink)}
         style="width:100%;max-width:560px;aspect-ratio:1/1;object-fit:cover;border-radius:24px;display:block;margin:0 auto"
     >
 </section>
-</main>
-    
+
 <section id="trgovina" class="band">
 <div class="wrap shop">
 <h2>Trgovina</h2>
@@ -110,16 +126,64 @@ footer .head{color:var(--ink)}
 </section>
 
 <section id="po-narocilu" class="wrap custom">
-<img src="images/vezen_okvir_spletna_trgovina (1).jpg" alt="Ročno vezen okvir z imenom in cvetjem, izdelan po naročilu" style="width:100%;max-width:560px;aspect-ratio:1/1;object-fit:cover;border-radius:24px;display:block;margin:0 auto">
-<div class="txt">
 <h2>Izdelano po tvoji želji</h2>
+<p class="lead">Izberi, kaj ti ustreza: vezenino po tvoji ideji ali pleten trak za ušesa v tvoji barvi in velikosti.</p>
+
+<div class="duo">
+
+<!-- LEVO: vezenina po meri -->
+<article class="panel">
+<img src="images/po-narocilu-ime.jpg" alt="Ročno vezen okvir z imenom in cvetjem, izdelan po naročilu">
+<h3>Vezenina po meri</h3>
 <p>Izberi motiv, barve in velikost, jaz pa ga izvezem na odejico, vzglavnik ali v okvir. Idealno za darila, poroke, krste in rojstva.</p>
 <ol>
 <li>Pošlji mi sporočilo z idejo.</li>
 <li>Dogovoriva se o motivu, ceni in roku.</li>
 <li>Izdelek prejmeš po pošti ali osebno.</li>
 </ol>
-<div><a class="btn fill" href="#kontakt">Pošlji povpraševanje</a></div>
+<a class="btn fill" href="#kontakt">Pošlji povpraševanje</a>
+</article>
+
+<!-- DESNO: trak za ušesa po meri -->
+<article class="panel">
+<h3>Trak za ušesa po meri</h3>
+<p>Spleten trak izdelam posebej zate: ti izbereš barvo in obseg glave, jaz ga spletem, da ti natančno pristaja.</p>
+
+<form id="trak-obrazec">
+<fieldset>
+<legend>1. Izberi barvo</legend>
+<div class="swatches">
+<label class="sw"><input type="radio" name="barva" value="Bež" required><span class="dot" style="background:#E8DCC8"></span>Bež</label>
+<label class="sw"><input type="radio" name="barva" value="Črna"><span class="dot" style="background:#222"></span>Črna</label>
+<label class="sw"><input type="radio" name="barva" value="Siva"><span class="dot" style="background:#A9A9A9"></span>Siva</label>
+<label class="sw"><input type="radio" name="barva" value="Roza"><span class="dot" style="background:#E8B7B9"></span>Roza</label>
+<label class="sw"><input type="radio" name="barva" value="Žajbljevo zelena"><span class="dot" style="background:#AFC4AE"></span>Žajbljevo zelena</label>
+<label class="sw"><input type="radio" name="barva" value="Bordo"><span class="dot" style="background:#7A4A50"></span>Bordo</label>
+</div>
+<div class="hint">Barve na zaslonu so le približne. Če želiš drugo barvo, jo napiši v opombo.</div>
+</fieldset>
+
+<div>
+<label class="lab" for="obseg">2. Obseg glave (v cm)</label>
+<input class="field" type="number" id="obseg" name="obseg" min="36" max="64" step="0.5" inputmode="decimal" placeholder="npr. 54" required>
+<div class="hint">Z mehkim merilom izmeri obseg glave čez čelo, tik nad ušesi. Če nimaš merila, uporabi vrvico in jo nato položi ob ravnilo.</div>
+</div>
+
+<div>
+<label class="lab" for="ime">3. Tvoje ime</label>
+<input class="field" type="text" id="ime" name="ime" autocomplete="name" required>
+</div>
+
+<div>
+<label class="lab" for="opomba">Opomba (neobvezno)</label>
+<textarea class="field" id="opomba" name="opomba" rows="3" placeholder="npr. druga barva, darilo, rok"></textarea>
+</div>
+
+<button class="btn fill" type="submit">Pošlji naročilo po e-pošti</button>
+<div class="hint">Gumb odpre tvoj e-poštni program z izpolnjenim sporočilom. Naročilo je veljavno, ko ga potrdim in se dogovoriva o ceni in roku.</div>
+</form>
+</article>
+
 </div>
 </section>
 
@@ -139,6 +203,24 @@ footer .head{color:var(--ink)}
 </div>
 <div class="wrap legal">[IME PRIIMEK s.p., naslov, matična in davčna številka]</div>
 </footer>
+
+<script>
+// SPREMENI: sem vpiši svoj e-poštni naslov, na katerega naj prihajajo naročila
+var EPOSTA = "tvoj-naslov@primer.si";
+
+document.getElementById('trak-obrazec').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var f = e.target;
+  var telo = 'Pozdravljena,\n\nrada bi naročila pleten trak za ušesa po meri.\n\n' +
+    'Barva: ' + f.barva.value + '\n' +
+    'Obseg glave: ' + f.obseg.value + ' cm\n' +
+    (f.opomba.value.trim() ? 'Opomba: ' + f.opomba.value.trim() + '\n' : '') +
+    '\nLep pozdrav,\n' + f.ime.value.trim();
+  window.location.href = 'mailto:' + EPOSTA +
+    '?subject=' + encodeURIComponent('Naročilo traku za ušesa po meri') +
+    '&body=' + encodeURIComponent(telo);
+});
+</script>
 
 </body>
 </html>

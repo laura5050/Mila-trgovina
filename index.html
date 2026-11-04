@@ -47,15 +47,18 @@ section.band{background:var(--band);padding:72px 0}
 .card .name{font-family:'Cormorant Garamond',Georgia,serif;font-size:26px}
 .card .price{color:var(--sub);font-size:15px}
 
-/* Izdelano po tvoji željI: dva razdelka */
-.custom{padding-top:80px;padding-bottom:80px;display:flex;flex-direction:column;gap:12px}
-.custom .lead{max-width:640px}
-.duo{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:32px;margin-top:24px;align-items:start}
-.panel{background:var(--band);border-radius:24px;padding:28px;display:flex;flex-direction:column;gap:18px}
-.panel img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:20px;display:block}
-.panel ol{margin:0;padding-left:20px;color:var(--sub)}
-.panel .btn{align-self:flex-start}
-form{display:flex;flex-direction:column;gap:20px}
+/* Izdelano po tvoji želji: vezenina čez celo stran */
+.custom{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:48px;align-items:center;padding-top:80px;padding-bottom:80px}
+.custom img{width:100%;max-width:560px;aspect-ratio:1/1;object-fit:cover;border-radius:24px;display:block;margin:0 auto}
+.custom .txt{display:flex;flex-direction:column;gap:20px}
+ol{margin:0;padding-left:20px;color:var(--sub)}
+
+/* Trak za ušesa po meri: razdelek pod vezeninami */
+.trak{display:flex;flex-direction:column;gap:12px}
+.trak .lead{max-width:640px}
+.trak form{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:40px;margin-top:20px;align-items:start}
+.stolpec{display:flex;flex-direction:column;gap:20px}
+.stolpec .btn{align-self:flex-start}
 fieldset{border:0;margin:0;padding:0;min-width:0}
 legend,.lab{padding:0;font-size:16px;color:var(--ink);margin-bottom:8px;display:block}
 .swatches{display:flex;flex-wrap:wrap;gap:10px}
@@ -126,30 +129,26 @@ footer .head{color:var(--ink)}
 </section>
 
 <section id="po-narocilu" class="wrap custom">
+<img src="images/vezen_okvir_spletna_trgovina%20(1).jpg" alt="Ročno vezen okvir z imenom in cvetjem, izdelan po naročilu">
+<div class="txt">
 <h2>Izdelano po tvoji želji</h2>
-<p class="lead">Izberi, kaj ti ustreza: vezenino po tvoji ideji ali pleten trak za ušesa v tvoji barvi in velikosti.</p>
-
-<div class="duo">
-
-<!-- LEVO: vezenina po meri -->
-<article class="panel">
-<img src="images/vezen_okvir_spletna_trgovina (1).jpg" alt="Ročno vezen okvir z imenom in cvetjem, izdelan po naročilu">
-<h3>Vezenina po meri</h3>
 <p>Izberi motiv, barve in velikost, jaz pa ga izvezem na odejico, vzglavnik ali v okvir. Idealno za darila, poroke, krste in rojstva.</p>
 <ol>
 <li>Pošlji mi sporočilo z idejo.</li>
 <li>Dogovoriva se o motivu, ceni in roku.</li>
 <li>Izdelek prejmeš po pošti ali osebno.</li>
 </ol>
-<a class="btn fill" href="#kontakt">Pošlji povpraševanje</a>
-</article>
+<div><a class="btn fill" href="#kontakt">Pošlji povpraševanje</a></div>
+</div>
+</section>
 
-<!-- DESNO: trak za ušesa po meri -->
-<article class="panel">
-<h3>Trak za ušesa po meri</h3>
-<p>Spleten trak izdelam posebej zate: ti izbereš barvo in obseg glave, jaz ga spletem, da ti natančno pristaja.</p>
+<section id="trak-po-meri" class="band">
+<div class="wrap trak">
+<h2>Trak za ušesa po meri</h2>
+<p class="lead">Spleten trak izdelam posebej zate: ti izbereš barvo in obseg glave, jaz ga spletem, da ti natančno pristaja.</p>
 
 <form id="trak-obrazec">
+<div class="stolpec">
 <fieldset>
 <legend>1. Izberi barvo</legend>
 <div class="swatches">
@@ -168,7 +167,9 @@ footer .head{color:var(--ink)}
 <input class="field" type="number" id="obseg" name="obseg" min="36" max="64" step="0.5" inputmode="decimal" placeholder="npr. 54" required>
 <div class="hint">Z mehkim merilom izmeri obseg glave čez čelo, tik nad ušesi. Če nimaš merila, uporabi vrvico in jo nato položi ob ravnilo.</div>
 </div>
+</div>
 
+<div class="stolpec">
 <div>
 <label class="lab" for="ime">3. Tvoje ime</label>
 <input class="field" type="text" id="ime" name="ime" autocomplete="name" required>
@@ -176,14 +177,13 @@ footer .head{color:var(--ink)}
 
 <div>
 <label class="lab" for="opomba">Opomba (neobvezno)</label>
-<textarea class="field" id="opomba" name="opomba" rows="3" placeholder="npr. druga barva, darilo, rok"></textarea>
+<textarea class="field" id="opomba" name="opomba" rows="4" placeholder="npr. druga barva, darilo, rok"></textarea>
 </div>
 
 <button class="btn fill" type="submit">Pošlji naročilo po e-pošti</button>
 <div class="hint">Gumb odpre tvoj e-poštni program z izpolnjenim sporočilom. Naročilo je veljavno, ko ga potrdim in se dogovoriva o ceni in roku.</div>
+</div>
 </form>
-</article>
-
 </div>
 </section>
 

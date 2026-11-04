@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Jost:wght@400&display=swap" rel="stylesheet">
 <style>
-:root{--logo-znak:100px;--logo-ime:70px;--logo-podnapis:20px;--ground:#FBF6F1;--band:#F4ECE4;--thread:#E2A3A6;--hoop:#CDBBA7;--blush:#F3DDDD;--sage:#E3ECE2;--sand:#EBE1D4;--ink:#7A4A50;--sub:#6F6157}
+:root{--logo-znak:100px;--logo-ime:70px;--logo-podnapis:20px;--ground:#FBF6F1;--band:#F4ECE4;--thread:#E2A3A6;--hoop:#CDBBA7;--blush:#F3DDDD;--sage:#E3ECE2;--sand:#EBE1D4;--ink:#7A4A50;--sub:#6F6157;--svetlo:#FBF5EC;--temno:#E6D9C8;--temno-besedilo:#5E5148}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--ground);color:var(--ink);font-family:'Jost',Helvetica,Arial,sans-serif;font-size:17px;line-height:1.6}
@@ -53,12 +53,14 @@ section.band{background:var(--band);padding:72px 0}
 .custom .txt{display:flex;flex-direction:column;gap:20px}
 ol{margin:0;padding-left:20px;color:var(--sub)}
 
-/* Trak za ušesa po meri: razdelek pod vezeninami */
-.trak{display:flex;flex-direction:column;gap:12px}
+/* Trak za ušesa po meri: besedilo in obrazec levo, slika desno */
+.trak{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:48px;align-items:center}
+.trak-txt{display:flex;flex-direction:column;gap:12px}
 .trak .lead{max-width:640px}
-.trak form{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:40px;margin-top:20px;align-items:start}
+.trak img{width:100%;max-width:560px;aspect-ratio:1/1;object-fit:cover;border-radius:24px;display:block;margin:0 auto}
+.trak form{display:flex;flex-direction:column;gap:20px;margin-top:12px}
 .stolpec{display:flex;flex-direction:column;gap:20px}
-.stolpec .btn{align-self:flex-start}
+.stolpec .btn,.trak form>.btn{align-self:flex-start}
 fieldset{border:0;margin:0;padding:0;min-width:0}
 legend,.lab{padding:0;font-size:16px;color:var(--ink);margin-bottom:8px;display:block}
 .swatches{display:flex;flex-wrap:wrap;gap:10px}
@@ -71,11 +73,13 @@ legend,.lab{padding:0;font-size:16px;color:var(--ink);margin-bottom:8px;display:
 .field:focus{outline:2px solid var(--ink);outline-offset:1px}
 .hint{font-size:14px;color:var(--sub);margin-top:6px}
 
+.light{background:var(--svetlo);padding:72px 0}
 .about{max-width:760px;margin:0 auto;padding:0 24px;display:flex;flex-direction:column;gap:20px;text-align:center}
-footer .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:32px;padding-top:56px;padding-bottom:24px;font-size:15px;color:var(--sub)}
+footer{background:var(--temno);color:var(--temno-besedilo)}
+footer .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:32px;padding-top:56px;padding-bottom:24px;font-size:15px;color:var(--temno-besedilo)}
 footer .col{display:flex;flex-direction:column;gap:8px}
 footer .head{color:var(--ink)}
-.legal{padding-bottom:32px;font-size:13px;color:var(--sub)}
+.legal{padding-bottom:32px;font-size:13px;color:var(--temno-besedilo)}
 </style>
 </head>
 <body>
@@ -144,6 +148,7 @@ footer .head{color:var(--ink)}
 
 <section id="trak-po-meri" class="band">
 <div class="wrap trak">
+<div class="trak-txt">
 <h2>Trak za ušesa po meri</h2>
 <p class="lead">Spleten trak izdelam posebej zate: ti izbereš barvo in obseg glave, jaz ga spletem, da ti natančno pristaja.</p>
 
@@ -185,9 +190,11 @@ footer .head{color:var(--ink)}
 </div>
 </form>
 </div>
+<img src="images/trakova-skupaj.jpg" alt="Bež in črn ročno pleten trak za ušesa na volneni odeji">
+</div>
 </section>
 
-<section id="o-meni" class="band">
+<section id="o-meni" class="light">
 <div class="about">
 <h2>O meni</h2>
 <p>Znanje o ročnih delih in pletenju mi je predala mama. Rada ga prenašam v lepe izdelke in vesela sem, ko se kdo razveseli kosa, ki sem ga naredila z roko in s srcem.</p>
